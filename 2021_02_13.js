@@ -2510,3 +2510,344 @@ function saleHotdogs(n){
 function printArray(array){
   return array.join(',')
 }
+
+
+// 7 kyu - Find Your Villain Name
+function getVillainName(birthday){
+  const m = ["Evil","Vile","Cruel","Trashy","Despicable","Embarrassing","Disreputable","Atrocious","Twirling","Orange","Terrifying","Awkward"];
+  const d = ["Mustache","Pickle","Hood Ornament","Raisin","Recycling Bin","Potato","Tomato","House Cat","Teaspoon","Laundry Basket"];
+  return 'The '+m[birthday.getMonth()]+' '+d[birthday.getDate()%10]
+}
+
+/// 7 kyu - Hells Kitchen
+function gordon(a){
+  let arr = a.toUpperCase().split(' ');
+  let gordon = []
+  let vowels = ['E', 'I', 'O', 'U'];
+  for (let i=0; i<arr.length; i++) {
+    let word = ''
+    for (let j=0; j<arr[i].length; j++) {
+      if (arr[i][j] === 'A') {
+        word += '@';
+      } else if (vowels.includes(arr[i][j])) {
+        word += '*'
+      } else {
+        word += arr[i][j]
+      }
+    }
+    word += '!!!!'
+    gordon.push(word)
+  }
+  return gordon.join(' ');
+}
+
+// 7 kyu - Holiday X - Bintang Vests
+function vestBuy(price, haggle){
+  switch (haggle) {
+    case 'light':
+      return Math.ceil(price*.8);
+      break;
+    case 'medium':
+      return Math.ceil(price*.7);
+      break;
+    case 'heavy':
+      return Math.ceil(price*.6);
+      break;
+    case 'walkandswear':
+      return Math.ceil(price*.1);
+      break;
+    default:
+      return 'Run!!';
+      break;
+  }
+}
+
+// 7 kyu - Birthday II - Presents
+function present(x, y){
+  switch (x) {
+    case 'goodpresent':
+      let newStr = ''
+      for (let i=0; i<x.length; i++) {
+        let curCharCode = x.charCodeAt(i) + y
+        newStr += String.fromCharCode(curCharCode)
+      }
+      return newStr;
+      break;
+    case 'crap':
+    case 'empty':
+      return x.split('').sort().join('');
+      break;
+    case 'bang':
+      let charCodeSum = 0;
+      for (let j=0; j<x.length; j++) {
+        let curCharCode = x.charCodeAt(j) - y;
+        charCodeSum += curCharCode
+      }
+      return charCodeSum;
+      break;
+    case 'badpresent':
+      return 'Take this back!';
+      break;
+    case 'dog':
+      return `pass out from excitement ${y} times`
+      break;
+    default:
+      break;
+  }
+}
+
+// 7 kyu - Move 10
+function moveTen(s){
+  let str = ''
+  let alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+  for (let i=0; i<s.length; i++) {
+    let char = s[i]
+    let newIndex = (alpha.indexOf(char)+10)%26
+    str += alpha[newIndex]
+  }
+  return str
+}
+
+// 7 kyu - Double Sort
+function dbSort(a){
+  let nums = [];
+  let strs = []
+  for (let i=0; i<a.length; i++) {
+    if (typeof a[i] === 'number') {
+      nums.push(a[i]);
+    } else {
+      strs.push(a[i])
+    }
+  }
+  nums.sort((a,b)=>a-b);
+  strs.sort();
+  return nums.concat(strs)
+}
+
+// 8 kyu - Multiply the number
+function multiply(number){
+  return number*Math.pow(5,((Math.abs(number)+'').length))
+}
+
+// 8 kyu - Grasshopper - Combine strings
+// Create the combineNames function here
+function combineNames(first, last) {
+  return first+' '+last
+}
+
+// 8 kyu - Chuck Norris VII - True or False (Beginner)
+function ifChuckSaysSo(){
+  return !true
+}
+
+// 8 kyu - Grasshopper - Array Mean
+var findAverage = function (nums) {
+  let sum = nums.reduce((acc,cur)=>acc+cur)
+  return sum/nums.length
+}
+
+// 8 kyu - UEFA EURO 2016
+function uefaEuro2016(teams, scores){
+  let result;
+  if (scores[1] > scores[0]) {
+    result = `${teams[1]} won!`
+  } else if (scores[0] > scores[1]) {
+    result = `${teams[0]} won!`
+  } else {
+    result = `teams played draw.`
+  }
+  return `At match ${teams[0]} - ${teams[1]}, ${result}`
+}
+
+// 8 kyu - Powers of 2
+function powersOfTwo(n){
+  let powers = []
+  for (let i=0; i<=n; i++) {
+    powers.push(Math.pow(2,i))
+  }
+  return powers
+}
+
+// 8 kyu - repeatIt
+var repeatIt = function(str, n) {
+    if (typeof str === 'string') {
+      return str.repeat(n);
+    }
+    return 'Not a string'
+}
+
+// 8 kyu - Tip Calculator
+function calculateTip(amount, rating) {
+  switch (rating.toLowerCase()) {
+    case 'excellent':
+      return Math.ceil(amount*.2);
+      break;
+    case 'great':
+      return Math.ceil(amount*.15);
+      break;
+    case 'good':
+      return Math.ceil(amount*.1);
+      break;
+    case 'poor':
+      return Math.ceil(amount*.05);
+      break;
+    case 'terrible':
+      return 0;
+      break;
+    default:
+      return 'Rating not recognised';
+      break;
+  }
+}
+
+// 8 kyu - The Wide-Mouthed frog!
+function mouthSize(animal) {
+  if (animal.toLowerCase() === 'alligator') {
+    return 'small'
+  }
+  return 'wide'
+}
+
+// 8 kyu - Contamination #1 - String-
+function contamination(text, char){
+  if (text.length === 0 || char.length === 0) {
+    return ''
+  }
+  return char.repeat(text.length)
+}
+
+// 7 kyu - Limit string length - 1
+function solution(string,limit){
+  if (string.length <= limit) {
+    return string
+  }
+  return string.slice(0,limit)+`...`
+}
+
+// 8 kyu - Name on billboard
+function billboard(name, price = 30){
+  let total = 0
+  for (let i=0; i<name.length; i++) {
+    total += price
+  }
+  return total
+}
+
+// 7 kyu - Binary Addition
+function addBinary(a,b) {
+  return (a+b).toString(2)
+}
+
+// 7 kyu - Jaden Casing Strings
+String.prototype.toJadenCase = function () {
+  let arr = this.split(' ')
+  let newArr = [];
+  for (let i=0; i<arr.length; i++) {
+    newArr.push(arr[i].charAt(0).toUpperCase()+arr[i].slice(1))
+  }
+  return newArr.join(' ')
+};
+
+// 7 kyu - Holiday V - SeaSick Snorkelling
+function seaSick(x){
+  let changes = 0;
+  for (let i=0; i<x.length-1; i++) {
+    if (x[i] != x[i+1]) {
+      changes++
+    }
+  }
+  if (changes > .2*x.length) {
+    return 'Throw Up'
+  }
+  return 'No Problem'
+}
+
+// 7 kyu - Life Path Number
+function lifePathNumber(dateOfBirth) {
+  let sum = 0;
+  let year = (dateOfBirth.substring(0,4).split(''));
+  for (let i=0; i<year.length; i++) {
+    sum += Number(year[i])
+    console.log(sum)
+  }
+  let month = (dateOfBirth.substring(5,7).split(''));
+  for (let i=0; i<month.length; i++) {
+    sum += Number(month[i])
+    console.log(sum)
+  }
+  let date = (dateOfBirth.substring(8,dateOfBirth.length).split(''));
+  for (let i=0; i<date.length; i++) {
+    sum += Number(date[i])
+    console.log(sum)
+  }
+  while (sum >= 10) {
+    let digits = (sum+'').split('')
+    sum = 0
+    for (let i=0; i<digits.length; i++) {
+      console.log(sum)
+      sum += Number(digits[i])
+    }
+  }
+  return sum
+}
+
+// 8 kyu - A wolf in sheep's clothing
+function warnTheSheep(queue) {
+  if (queue.indexOf('wolf') === queue.length-1) {
+    return 'Pls go away and stop eating my sheep'
+  }
+  let sheepNum = queue.length - 1 - queue.indexOf('wolf')
+  return `Oi! Sheep number ${sheepNum}! You are about to be eaten by a wolf!`
+}
+
+// 8 kyu - FIXME: Replace all dots
+var replaceDots = function(str) {
+  let newStr = ''
+  for (let i=0; i<str.length; i++) {
+    if (str[i] === '.') {
+      newStr += '-'
+    } else {
+      newStr += str[i]
+    }
+  }
+  return newStr
+}
+
+// 6 kyu - Pairs of Bears
+function bears(x, s){
+  let i=0
+  let matingPairs = ''
+  while (i<s.length-1) {
+    if ((s[i] === 'B' && s[i+1] === '8') || (s[i] === '8' && s[i+1] === 'B')) {
+      matingPairs += s[i];
+      matingPairs += s[i+1];
+      i += 2
+    } else {
+      i++
+    }
+  }
+  if (matingPairs.length >= x*2) {
+    return [matingPairs, true]
+  }
+  return [matingPairs, false]
+}
+
+// 8 kyu - Gravity Flip
+const flip=(d, a)=>{
+  if (d === 'L') {
+    a.sort((a,b) => b-a)
+  } else {
+    a.sort((a,b) => a-b)
+  }
+  return a
+}
+
+// 8 kyu - Is the string uppercase?
+String.prototype.isUpperCase = function() {
+  let upper = this.toUpperCase()
+  if (this == upper) {
+    return true;
+  } else {
+    return false;
+  }
+}
