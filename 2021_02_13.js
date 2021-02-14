@@ -433,3 +433,481 @@ function points(games) {
   }
   return championPts;
 }
+
+// 8 kyu - Sum The Strings
+function sumStr(a,b) {
+  return String(Number(a)+Number(b));
+}
+
+// 8 kyu - Take the Derivative
+function derive(coefficient,exponent) {
+  return `${coefficient*exponent}x^${exponent-1}`
+}
+
+// 8 kyu - Sum Arrays
+function sum (numbers) {
+    "use strict";
+    if (numbers.length == 0) {
+      return 0;
+    }
+    let total = 0;
+    numbers.forEach(num => total += num);
+    return total;
+};
+
+// 8 kyu - Generate range of integers
+function generateRange(min, max, step){
+  let rangeArr = [];
+  for (let i=min; i<=max; i+=step) {
+    rangeArr.push(i)
+  }
+  return rangeArr;
+}
+
+// 8 kyu - CSV representation of array
+function toCsvText(array) {
+  let outputStr = "";
+   for (let i=0; i<array.length; i++) {
+     let innerArr = array[i];
+     for (let j=0; j<innerArr.length-1; j++) {
+       outputStr += `${innerArr[j]},`
+     }
+     if (i !== array.length -1) {
+       outputStr += `${innerArr[innerArr.length-1]}\n`;
+     } else {
+       outputStr += `${innerArr[innerArr.length-1]}`;
+     }
+   }
+  return outputStr;
+}
+
+// 8 kyu - CSV representation of array
+function toCsvText(array) {
+  return array.join('\n');
+}
+
+// 7 kyu - Sum of Minimums!
+function sumOfMinimums(arr) {
+  let sum = 0;
+  for (let i=0; i<arr.length; i++) {
+    minimum = arr[i][0];
+    for (let j=0; j<arr[i].length; j++) {
+      if (arr[i][j] < minimum) {
+        minimum = arr[i][j];
+      }
+    }
+    sum += minimum;
+  }
+  return sum;
+}
+
+// 8 kyu - Parse nice int from char problem
+function getAge(inputString){
+  return Number(inputString.charAt(0));
+}
+
+// 7 kyu - Vowel Count
+function getCount(str) {
+  var vowelsCount = 0;
+
+  for (let i=0; i<str.length; i++) {
+    switch (str.charAt(i)) {
+        case "a" :
+        case "e" :
+        case "i" :
+        case "o" :
+        case "u" :
+          vowelsCount ++;
+          break;
+        default:
+          break;
+    }
+  }
+
+  return vowelsCount;
+}
+
+// 6 kyu - Multiples of 3 or 5
+function solution(number){
+  let sum = 0;
+  if (number <= 0) {
+    return sum;
+  }
+  for (let i=3; i<number; i++) {
+    if (i%3 === 0 && i%5 === 0) {
+      sum += i;
+    } else if (i%3 === 0 || i%5 === 0) {
+      sum += i;
+    }
+  }
+  return sum;
+}
+
+// 8 kyu - Count the Monkeys!
+function monkeyCount(n) {
+  let monkeyArr = [];
+  for (let i=1; i<=n; i++) {
+    monkeyArr.push(i);
+  }
+  return monkeyArr;
+}
+
+// 8 kyu - Are You Playing Banjo?
+function areYouPlayingBanjo(name) {
+  if (name[0].toLowerCase() === 'r') {
+    return `${name} plays banjo`;
+  }
+  return `${name} does not play banjo`;
+}
+
+// 8 kyu - Are You Playing Banjo?
+function areYouPlayingBanjo(name) {
+  return name + (name[0].toLowerCase() === 'r' ? ` plays banjo` : ` does not play banjo`);
+}
+
+// 8 kyu - Is he gonna survive?
+hero = (bullets, dragon) => bullets/2 >= dragon || false;
+
+// 8 kyu - If you can't sleep, just count sheep!!
+var countSheep = function (num){
+  let sheepNum = 1;
+  let murmur = ""
+  while (sheepNum <= num) {
+    murmur += `${sheepNum} sheep...`
+    sheepNum++;
+  }
+  return murmur;
+}
+
+// 8 kyu - Calculate BMI
+function bmi(weight, height) {
+  let bmi = weight / height ** 2;
+  if (bmi <= 18.5) {
+    return "Underweight";
+  } else if (bmi <= 25) {
+    return "Normal";
+  } else if (bmi <= 30) {
+    return "Overweight";
+  } else {
+    return "Obese";
+  }
+  return "";
+}
+
+// 8 kyu - Calculate BMI
+let bmi = (weight, height, bmi = (weight/height**2)) =>
+  bmi <= 18.5 ? "Underweight" :
+  bmi <= 25   ? "Normal" :
+  bmi <= 30   ? "Overweight" : "Obese";
+
+// 8 kyu - Compare within margin
+function closeCompare(a, b, margin = 0){
+  let difference = a-b;
+  if (Math.abs(difference) <= margin) {
+    return 0;
+  } else if (difference > 0) {
+    return 1;
+  } else if (difference < 0) {
+    return -1;
+  }
+  return "i dunno"
+}
+
+// 8 kyu u- Do I get a bonus?
+bonusTime = (salary, bonus) => '\u00A3' + (bonus ? salary*10 : salary)
+
+// 7 kyu - Alphabet symmetry
+function solve(arr){
+  const alphaArr = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  let count = [];
+  for (let i=0; i<arr.length; i++) {
+    count[i] = 0
+    for (let j=0; j<arr[i].length; j++) {
+      if (arr[i][j].toLowerCase() === alphaArr[j]) {
+        count[i]++;
+      }
+    }
+  }
+  return count;
+};
+
+// 7 kyu - Maximum Multiple
+function maxMultiple(divisor, bound){
+  for (let i=bound; i>0; i--) {
+    if (i%divisor === 0) {
+      return i;
+    }
+  }
+}
+
+// 8 kyu - Jenny's secret message
+function maxMultiple(divisor, bound){
+ for (let i=bound; i>0; i--) {
+   if (i%divisor === 0) {
+     return i;
+   }
+ }
+}
+
+// 8 kyu - Find Maximum and Minimum Values of a List
+var min = function(list){
+    return Math.min(...list);
+}
+
+var max = function(list){
+    // set first item as the currentMax
+    let currentMax = list[0];
+    // check items one a time
+    for (let i=0; i<list.length; i++) {
+      // if the next item is bigger, it becomes the currentMax
+      if (list[i] > currentMax) {
+        currentMax = list[i];
+      }
+    }
+    // whatever if the currentMax at the end wins
+    return currentMax;
+}
+
+// 8 kyu - Sentence Smash
+// Smash Words
+function smash (words) {
+    "use strict";
+    let sentence = words.join(" ");
+    return sentence.trim();
+};
+
+// 8 kyu - Convert a string to an array
+function stringToArray(string){
+  return string.split(' ');
+
+}
+
+// 8 kyu - Rock Paper Scissors!
+const rps = (p1, p2) => {
+  switch (true) {
+      case p1 === "scissors" && p2 === "paper":
+      case p1 === "paper" && p2 === "rock":
+      case p1 === "rock" && p2 === "scissors":
+        return "Player 1 won!";
+        break
+      case p1 === "scissors" && p2 === "rock":
+      case p1 === "paper" && p2 === "scissors":
+      case p1 === "rock" && p2 === "paper":
+        return "Player 2 won!";
+        break;
+      default:
+        return "Draw!";
+        break;
+  }
+};
+
+// 6 kyu - Persistent Bugger
+function persistence(num) {
+  let myNum = num;
+  let count = 0
+  while (myNum >= 10) {
+    let multVal = Number(String(myNum)[0]);
+    for (let i=1; i<String(myNum).length; i++) {
+      multVal = multVal * Number(String(myNum)[i]);
+    }
+    myNum = multVal;
+    count++;
+  }
+  return count;
+}
+
+// 7 kyu - Maximum Length Difference
+function mxdiflg(a1, a2) {
+   if (a1.length===0 || a2.length === 0) {
+     return -1;
+   }
+   let max = 0;
+   for (let i= 0; i<a1.length; i++) {
+     for (let j=0; j<a2.length; j++) {
+
+       if (Math.abs(a1[i].length - a2[j].length) > max) {
+         max = Math.abs(a1[i].length-a2[j].length);
+
+       }
+     }
+   }
+  return max;
+}
+
+// 7 kyu - Maximum Length Difference
+function mxdiflg(a1, a2) {
+   if (a1.length===0 || a2.length===0) {
+     return -1;
+   }
+   let max = 0;
+   for (let i=0; i<a1.length; i++) {
+     for (let j=0; j<a2.length; j++) {
+       let curr1 = a1[i].length;
+       let curr2 = a2[j].length;
+       if (Math.abs(curr1-curr2) > max) {
+         max = Math.abs(curr1-curr2);
+       }
+     }
+    }
+  return max;
+}
+
+// 6 kyu - Vasya - Clerk
+function tickets(peopleInLine){
+  let changeDrawer = [0,0];
+  for (let i=0; i<peopleInLine.length; i++) {
+    if (peopleInLine[i] === 25) {
+      changeDrawer[0]++;
+    } else if (peopleInLine[i] === 50) {
+      changeDrawer[1]++;
+      if (changeDrawer[0] < 1) {
+        return "NO";
+      } else {
+        changeDrawer[0]--;
+      }
+    } else {
+      if (changeDrawer[1] >= 1 && changeDrawer[0] >= 1) {
+        changeDrawer[1]--;
+        changeDrawer[0]--;
+      } else if (changeDrawer[0] >= 3) {
+        changeDrawer[0] = changeDrawer[0]-3;
+      } else {
+        return "NO";
+      }
+    }
+  }
+  return "YES"
+}
+
+// 8 kyu - simple calculator
+function calculator(a,b,sign){
+  if (isNaN(a) || isNaN(b)) {
+    return "unknown value";
+  }
+  switch (sign) {
+      case "+":
+        return a+b;
+        break;
+      case "-":
+        return a-b;
+        break;
+      case "/":
+        return a/b;
+        break;
+      case "*":
+        return a*b;
+        break;
+      default:
+        return "unknown value";
+        break;
+  }
+
+}
+
+// 8 kyu - Is this my tail?
+function correctTail(body, tail) {
+
+  let sub = body.substr(body.length-(tail.length));
+
+  if (sub === tail) {
+    return true
+  }
+  else {
+    return false
+  }
+}
+
+// 8 kyu - Who is going to pay for the wall?
+function whoIsPaying(name){
+  if (name.length <= 2) {
+    return [name];
+  }
+  return [name, name.substring(0,2)];
+}
+
+// 8 kyu - Who is going to pay for the wall?
+function whoIsPaying(name){
+  return (name.length>2)?[name, name.substring(0,2)]:[name];
+}
+
+// 8 kyu - Even or Odd
+function even_or_odd(number) {
+  if (number%2 === 0) {
+    return 'Even';
+  } else {
+    return 'Odd';
+  }
+}
+
+// 8 kyu - Even or Odd
+function even_or_odd(number) {
+  return (number % 2 === 0)?"Even":"Odd";
+}
+
+// 8 kyu - Keep Hydrated!
+function litres(time) {
+  let litresWillDrink = Math.floor(0.5*time);
+  return litresWillDrink;
+}
+
+// 8 kyu - Opposite number
+function opposite(number) {
+  return number*-1;
+}
+
+// 8 kyu - Sum of positive
+function positiveSum(arr) {
+  let total = 0;
+  for (let i=0; i<arr.length; i++) {
+    if (arr[i] > 0) {
+      total += arr[i]
+    }
+  }
+  return total;
+}
+
+// 6 kyu - Find the odd int
+function findOdd(A) {
+  let count;
+  for (let i=0; i<A.length; i++) {
+    count = 0;
+    for (let j=0; j<A.length; j++) {
+      if (A[i] === A[j]) {
+        count++;
+      }
+    }
+    if (count % 2 != 0) {
+      return A[i];
+    }
+  }
+  return 0;
+}
+
+// 8 kyu - String repeat
+function repeatStr (n, s) {
+  return s.repeat(n);
+}
+
+// 8 kyu - Remove String Spaces
+function noSpace(x){
+  return x.split(" ").join("");
+}
+
+// 8 kyu - Convert number to reversed array of digits
+function digitize(n) {
+  let revArr = [];
+  n = n + "";
+  for (let i=n.length-1; i>=0; i--) {
+    revArr.push(Number(n.charAt(i)));
+  }
+  return revArr;
+}
+
+// 8 kyu - Beginner - Lost Without a Map
+function maps(x){
+  let doubled = [];
+  for (let i=0; i<x.length; i++) {
+    doubled.push(x[i]*2);
+  }
+  return doubled;
+}
