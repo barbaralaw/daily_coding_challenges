@@ -2306,3 +2306,207 @@ function isTriangle(a,b,c) {
   }
   return false
 }
+
+// 6 kyu - Tribonacci Sequence
+function tribonacci(signature,n){
+  let seq = signature;
+  let i=3
+  while (i <= n) {
+    seq.push(seq[i-3]+seq[i-2]+seq[i-1]);
+    i++
+  }
+  return seq.slice(0, n)
+}
+
+// 8 kyu - Find numbers which are divisible by given number
+function divisibleBy(numbers, divisor){
+  let newArr = []
+  for (let i=0; i<numbers.length; i++) {
+    if (numbers[i]%divisor === 0) {
+      newArr.push(numbers[i])
+    }
+  }
+  return newArr
+}
+
+// 7 kyu - Beginner Series #3 Sum of Numbers
+function getSum( a,b ) {
+  let sum = 0
+  if (a === b) {
+    return a
+  }
+  for (let i=Math.min(a,b); i<=Math.max(a,b); i++) {
+    sum += i
+  }
+  return sum
+}
+
+// 7 kyu - Find the next perfect square!
+function findNextSquare(sq) {
+  let curSqrt = Math.sqrt(sq)
+  if (curSqrt % 1 == 0) {
+    return Math.pow((curSqrt+1),2)
+  }
+  return -1
+}
+
+// 8 kyu - Calculate Price Excluding VAT
+//return price without vat
+function excludingVatPrice(price){
+  if (price === 0) {
+    return 0
+  }
+  if (price) {
+    return Number((price/1.15).toFixed(2))
+  }
+  return -1;
+}
+
+// 8 kyu - Potenciation
+function power(x,y){
+  let pow = 1
+  let i = y
+  while (i > 0) {
+    pow = x*pow
+    i--
+  }
+  return pow
+}
+
+// 7 kyu - Isograms
+function isIsogram(str){
+  let seen = [];
+  for (let i=0; i<str.length; i++) {
+    if (seen.includes(str[i].toLowerCase())) {
+      return false;
+    }
+    seen.push(str[i].toLowerCase())
+  }
+  return true;
+}
+
+// 6 kyu - Bit Counting
+var countBits = function(n) {
+  let ones = 0;
+  for (let i=0; i<(n.toString(2)).length; i++) {
+    if ((n.toString(2))[i] === '1') {
+      ones++
+    }
+  }
+  return ones;
+};
+
+// 6 kyu - Unique In Order
+var uniqueInOrder=function(iterable){
+  if (iterable.length === 0) {
+    return []
+  }
+  let uniques = [iterable[0]];
+  for (let i=0; i<iterable.length; i++) {
+    if (iterable[i] != uniques[uniques.length-1]) {
+      uniques.push(iterable[i])
+    }
+  }
+  return uniques;
+}
+
+// 8 kyu - Grasshopper - Debug
+function weatherInfo (temp) {
+  let c = (temp - 32) * (5/9)
+  if (c < 0)
+    return (c + " is freezing temperature")
+  else
+    return (c + " is above freezing temperature")
+}
+
+
+// 7 kyu - Odd or Even?
+function oddOrEven(array) {
+  if (array.length === 0) {
+    return 'even'
+  }
+  if (array.reduce((acc,cur)=>acc+cur) % 2 != 0) {
+    return 'odd'
+  }
+  return 'even'
+}
+
+// 7 kyu - Evens and Odds
+function evensAndOdds(num){
+  if (num%2 === 0) {
+    return num.toString(2)
+  }
+  return num.toString(16)
+}
+
+// 7 kyu - Even or Odd - Which si Greater?
+function evenOrOdd(str) {
+  let odds = 0;
+  let evens = 0;
+  for (let i=0; i<str.length; i++) {
+    if (str[i] % 2 === 0) {
+      evens += Number(str[i])
+    } else {
+      odds+= Number(str[i])
+    }
+  }
+  return (evens>odds)?'Even is greater than Odd':evens===odds?'Even and Odd are the same':'Odd is greater than Even'
+}
+
+// 7 kyu - Even odd disparity
+function solve(a){
+  let evens = 0;
+  let odds = 0;
+  for (let i=0; i<a.length; i++) {
+    if (typeof a[i] == 'number') {
+      if (a[i] % 2 === 0) {
+        evens++
+      } else {
+        odds++
+      }
+    }
+  }
+  return evens-odds
+};
+
+// 7 kyu - Anagram Detection
+// write the function isAnagram
+var isAnagram = function(test, original) {
+  if (test.toLowerCase().split('').sort().join('') === original.toLowerCase().split('').sort().join('')) {
+    return true;
+  }
+  return false;
+};
+
+// 7 kyu - Cat and Mouse - Easy Version
+function catMouse(x){
+  if (x.indexOf('m')-x.indexOf('C') <= 4) {
+    return 'Caught!'
+  }
+  return 'Escaped!'
+}
+
+// 7 kyu - Count the Characters
+function countChar(string, char) {
+  let count = 0;
+  for (let i=0; i<string.length; i++) {
+    if (string[i].toLowerCase() === char.toLowerCase()) {
+      count++
+    }
+  }
+  return count;
+}
+
+// 8 kyu - Basic Training: Add item to an Array
+// add the value "codewars" to the already defined websites array
+websites.push('codewars')
+
+// 8 kyu - Training JS #7: if..else and ternary operator
+function saleHotdogs(n){
+  return n<5?n*100:n<10?n*95:n*90
+}
+
+// 8 kyu - Printing Array elements with Comma delimiters
+function printArray(array){
+  return array.join(',')
+}
