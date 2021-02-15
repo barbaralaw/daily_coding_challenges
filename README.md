@@ -2,7 +2,7 @@
 
 This repository is just where I collect my daily coding challenge solutions.
 
-## Why?
+## :thinking: Why?
 
 I do daily challenges for a few reasons:
 * I love a good puzzle and this is quicker than a crossword
@@ -10,7 +10,7 @@ I do daily challenges for a few reasons:
 * Love ~~to smash the~~ **friendly** competition
 * What better way to deepen my understanding of the language than to use it?
 
-## Some Notes
+## :notebook: Some Notes
 
 At the moment all the challenges here are [Codewars](https://codewars.com) katas. I keep note of their names, but not the instructions. If you want to work on a the same kata as I have, please feel free to visit my [profile](https://www.codewars.com/users/barbaralaw/completed) and view my completed list.
 
@@ -18,7 +18,7 @@ I **love** friendly competition, so if you want to crush me on the leaderboard, 
 
 These challenges are a study tool for me, so you'll likely see a lot of repetition of the same challenge. I do this so that I can practice with different methods, or sometimes just for kicks.
 
-## Current Codewars Stats
+## :medal_sports: Current Codewars Stats
 
 Ranked: 4kyu
 Total Completed Kata: 253
