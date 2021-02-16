@@ -20,7 +20,7 @@ These challenges are a study tool for me, so you'll likely see a lot of repetiti
 
 ## :medal_sports: Current Codewars Stats
 
-Ranked: 4kyu
+(https://www.codewars.com/users/barbaralaw/badges/large)
 Total Completed Kata: 274
   * 8kyu Completed: 192/388
   * 7kyu Completed: 57/1844
