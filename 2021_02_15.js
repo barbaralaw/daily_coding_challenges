@@ -62,3 +62,144 @@ function f(n){
   }
   return false
 };
+
+// 8 kyu - SpeedCode #2 - Array Madness
+function arrayMadness(a, b) {
+  if (a.map(elem=>elem*elem).reduce((acc,cur)=>acc+cur) > (b.map(elem=>elem*elem*elem).reduce((acc,cur)=>acc+cur))) {
+    return true;
+  }
+  return false;
+}
+
+// 8 kyu - Add Length
+function addLength(str) {
+  let arr = str.split(' ');
+  return (arr.map(elem=>`${elem} ${elem.length}`))
+}
+
+// 8 kyu - Character Frequency
+function charFreq(message) {
+  let count = {};
+  for (let i=0; i<message.length; i++) {
+    if (!count[message[i]]) {
+      console.log(message[i]);
+      count[`${message[i]}`] = 1;
+    } else {
+      count[`${message[i]}`]++
+    }
+  }
+  return count;
+}
+
+// 8 kyu - ES6 string addition
+function joinStrings(string1, string2){
+  return `${string1} ${string2}`
+}
+
+// 8 kyu - Sum Mixed Array
+function sumMix(x){
+  return x.map(elem=>Number(elem)).reduce((acc,cur)=>acc+cur)
+}
+
+// 8 kyu - Double Char
+function doubleChar(str) {
+  return str.split('').map(x=>x+x).join('')
+}
+
+// 8 kyu - Exclamation marks series #11: Replace all vowel to exclamation mark in the sentence
+function replace(s){
+  let vowels = ['a','e','i','o','u']
+  let arr = s.split('')
+  for (let i=0; i<arr.length; i++) {
+    if (vowels.includes(arr[i].toLowerCase())) {
+      arr[i] = '!'
+    }
+  }
+  return arr.join('')
+}
+
+// 8 kyu - Triple Trouble
+function tripleTrouble(one, two, three){
+  let str = '';
+  for (let i=0; i<one.length; i++) {
+    str += one[i];
+    str += two[i];
+    str += three[i]
+  }
+  return str
+}
+
+// 8 kyu - Collatz Conjecture (3n+1)
+var hotpo = function(n){
+  let count = 0
+  while (n != 1) {
+    n%2 === 0 ? n = n/2 : n = (3*n)+1
+    count++
+  }
+  return count;
+}
+
+// 8 kyu - Type of sum
+function typeOfSum(a, b) {
+  return typeof (a+b)
+}
+
+// 8 kyu - Evil or Odious
+function evil(n) {
+  let bin = n.toString(2);
+  let count = 0;
+  for (let i=0; i<bin.length; i++) {
+    if (bin[i] === '1') {
+      count++
+    }
+  }
+  return (`It's ` + (count%2===0?`Evil`:`Odious`) + '!')
+}
+
+// 8 kyu - Count Odd Numbers below n
+function oddCount(n){
+  return Math.floor(n/2)
+}
+
+// 8 kyu - I love you, a little, a lot, passionately ... not at all
+function howMuchILoveYou(nbPetals) {
+  switch (nbPetals%6) {
+    case 1:
+      return 'I love you'
+      break;
+    case 2:
+      return 'a little'
+      break;
+    case 3:
+      return 'a lot'
+      break;
+    case 4:
+      return 'passionately'
+      break;
+    case 5:
+      return 'madly'
+      break;
+    default:
+      return 'not at all'
+      break;
+  }
+}
+
+// 8 kyu - Find the Difference in Age etween Oldest and Youngest Family Members
+function differenceInAges(ages){
+  ages.sort((a,b)=>a-b)
+  return [ages[0], ages[ages.length-1], ages[ages.length-1]-ages[0]]
+}
+
+// 8 kyu - Define a card suit
+function defineSuit(card) {
+  if (deck.indexOf(card) <= 12) {
+    return 'clubs'
+  } else if (deck.indexOf(card) <= 25) {
+    return 'diamonds'
+  } else if (deck.indexOf(card) <= 38) {
+    return 'hearts'
+  } else {
+    return 'spades'
+  }
+}
