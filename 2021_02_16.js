@@ -274,3 +274,23 @@ function sortByName(ary) {
   }
   return finalArray
 }
+
+// 8 kyu - Find Nearest Square
+function nearestSq(n){
+  let belowSquare = Math.pow(Math.floor(Math.sqrt(n)),2)
+  let aboveSquare = Math.pow(Math.ceil(Math.sqrt(n)),2)
+  if (Math.abs(belowSquare-n) < Math.abs(aboveSquare-n)) {
+    return belowSquare
+  }
+  return aboveSquare
+}
+
+// 8 kyu - Welcome to the City
+function sayHello( name, city, state ) {
+  return  `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
+}
+
+// 8 kyu - Area of a Square
+function squareArea(A){
+  return Number(Math.pow((A/(.5*Math.PI)),2).toFixed(2))
+}
