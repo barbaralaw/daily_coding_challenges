@@ -107,3 +107,170 @@ var moveZeros = function (arr) {
   }
   return moved.concat(zeroes)
 }
+
+// 5 kyu - Sort - one, three, two
+function sortByName(ary) {
+  let wordArray = []
+  for (let i=0; i<ary.length; i++) {
+    let curNum = ary[i]+''
+    console.log(curNum)
+    let str = ''
+    if (curNum === '0') {
+      wordArray.push('zero')
+    } else {
+      if (curNum.length === 3) {
+        switch (curNum[0]) {
+          case '1':
+            str += 'one'
+            break;
+          case '2':
+            str += 'two'
+            break;
+          case '3':
+            str += 'three'
+            break;
+          case '4':
+            str += 'four'
+            break;
+          case '5':
+            str += 'five'
+            break;
+          case '6':
+            str += 'six'
+            break;
+          case '7':
+            str += 'seven'
+            break;
+          case '8':
+            str += 'eight'
+            break;
+          case '9':
+            str += 'nine'
+            break;
+        }
+        str += ' hundred '
+        curNum = curNum.slice(1)
+      }
+
+      if (curNum.length === 2) {
+        switch (curNum[0]) {
+          // for 2 digit numbers, need rules to deal with teen numbers
+          case '1':
+            switch (curNum[curNum.length-1]) {
+                case '0':
+                  str += 'ten'
+                  break;
+                case '1':
+                  str += 'eleven'
+                  break;
+                case '2':
+                  str += 'twelve'
+                  break;
+                case '3':
+                  str += 'thirteen'
+                  break;
+                case '4':
+                  str += 'fourteen'
+                  break;
+                case '5':
+                  str += 'fifteen'
+                  break;
+                case '6':
+                  str += 'sixteen'
+                  break;
+                case '7':
+                  str += 'seventeen'
+                  break;
+                case '8':
+                  str += 'eighteen'
+                  break;
+                case '9':
+                  str += 'nineteen'
+                  break;
+            }
+            break;
+          case '2':
+            str += 'twenty '
+            curNum = curNum[curNum.length-1]
+            break;
+          case '3':
+            str += 'thirty '
+            curNum = curNum[curNum.length-1]
+            break;
+          case '4':
+            str += 'forty '
+            curNum = curNum[curNum.length-1]
+            break;
+          case '5':
+            str += 'fifty '
+            curNum = curNum[curNum.length-1]
+            break;
+          case '6':
+            str += 'sixty '
+            curNum = curNum[curNum.length-1]
+            break;
+          case '7':
+            str += 'seventy '
+            curNum = curNum[curNum.length-1]
+            break;
+          case '8':
+            str += 'eighty '
+            curNum = curNum[curNum.length-1]
+            break;
+          case '9':
+            str += 'ninety '
+            curNum = curNum[curNum.length-1]
+            break;
+          default:
+            curNum = curNum[curNum.length-1]
+            break;
+        }
+      }
+      if (curNum.length === 1) {
+        switch (curNum[curNum.length-1]) {
+          case '1':
+            str += 'one'
+            break;
+          case '2':
+            str += 'two'
+            break;
+          case '3':
+            str += 'three'
+            break;
+          case '4':
+            str += 'four'
+            break;
+          case '5':
+            str += 'five'
+            break;
+          case '6':
+            str += 'six'
+            break;
+          case '7':
+            str += 'seven'
+            break;
+          case '8':
+            str += 'eight'
+            break;
+          case '9':
+            str += 'nine'
+            break;
+        }
+      }
+      wordArray.push(str+' ' +ary[i])
+    }
+  }
+  wordArray.sort()
+  let finalArray = []
+  for (let i=0; i<wordArray.length; i++) {
+    let numbers = ['0','1','2','3','4','5','6','7','8','9']
+    let digStr = ''
+    for (let j=0; j<wordArray[i].length; j++) {
+      if (numbers.includes(wordArray[i][j])) {
+        digStr += wordArray[i][j]
+      }
+    }
+    finalArray.push(Number(digStr))
+  }
+  return finalArray
+}
