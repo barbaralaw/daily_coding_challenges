@@ -1,4 +1,4 @@
-// 6 kyu - Grouped by commas
+// 6 kyu - Grouped by Commas
 function groupByCommas(n) {
   let str = n+''
   if (n > 999) {
