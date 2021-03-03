@@ -32,3 +32,7 @@ function streetFighterSelection(fighters, position, moves){
   }
   return selectedFighters
 }
+
+// 8 kyu - Mr. Freeze
+// mark the MrFreeze object instance as frozen
+Object.freeze(MrFreeze)
