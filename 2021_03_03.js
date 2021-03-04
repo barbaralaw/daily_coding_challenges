@@ -5,4 +5,8 @@ function perfectRoots(n){
   }
   return true;
 }
- 
+
+// 8 kyu - Semi-Optional
+function wrap(val) {
+  return {value:val};
+}
