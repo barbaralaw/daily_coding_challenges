@@ -13,3 +13,8 @@ String.prototype.digit = function() {
 String.prototype.isLetter = function() {
   return /^[a-zA-Z]$/.test(this)
 }
+
+// 7 kyu - Regexp Basics - is it a vowel?
+String.prototype.vowel = function() {
+  return /^[aeiou]$/i.test(this);
+};
