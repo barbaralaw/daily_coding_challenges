@@ -8,3 +8,8 @@ function unusualFive() {
 String.prototype.digit = function() {
   return /^\d$/.test(this)
 };
+
+// 7 kyu - Regexp Basics - is it a letter?
+String.prototype.isLetter = function() {
+  return /^[a-zA-Z]$/.test(this)
+}
