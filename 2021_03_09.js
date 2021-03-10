@@ -16,3 +16,14 @@ function finalAttackValue(x,monsterList){
   }
   return x
 }
+
+// 7 kyu - Watching your pennies
+function manageMoney(cash,expenses,rate) {
+  for (let i=1; i<=12; i++) {
+    cash = (cash*((rate/100)+1))-expenses
+    if (cash <= 0) {
+      return `You ran out of money after ${i-1} months`
+    }
+  }
+  return `You still have $${cash.toFixed(2)}`
+}
