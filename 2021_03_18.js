@@ -25,3 +25,68 @@ function iqTest(numbers){
   }
   return -1
 }
+
+// 7 kyu - Sum of odd numbers
+function rowSumOddNumbers(n) {
+	// P - given a number n
+  // R - must return a number equal to the sum of odd numbers in that pyramid row
+  // E - n = 4 returns 64
+  return n**3
+}
+
+// 7 kyu - Count the Digit
+function nbDig(n, d) {
+  let digs = '';
+  for (let i=0; i<=n; i++) {
+    digs = digs + i**2 + ''
+  }
+  return digs.split('').filter(x => x == d).length
+}
+
+// 7 kyu - Area of a Circle
+var circleArea = function(radius) {
+  if (radius > 0) {
+    return Number((Math.PI*radius*radius).toFixed(2))
+  }
+  return false;
+};
+
+// 8 kyu - Enumerable Magic #3 - Does My List Include This?
+function include(arr, item){
+  return arr.includes(item)
+}
+
+// 8 kyu - Enumerable Magic #1 - True for All?
+function all( arr, fun ){
+  let filt = arr.filter(x => fun(x));
+  if (arr.length === filt.length) {
+    return true;
+  }
+  return false;
+}
+
+// 8 kyu - Enumerable Magic #2 - True for Any?
+function any(arr, fun){
+  let filt = arr.filter(x => fun(x))
+  if (filt.length > 0) {
+    return true;
+  }
+  return false;
+}
+
+// 8 kyu - Enumerable Magic #5- True for Just One?
+function one(arr, fun){
+  let filt = arr.filter(x => fun(x))
+  return filt.length === 1
+}
+
+// 8 kyu - Is there a vowel in there?
+function isVow(a){
+  let vowelCodes = [97,101,105,111,117]
+  for (let i=0; i<a.length; i++) {
+    if (vowelCodes.includes(a[i])) {
+      a[i] = String.fromCharCode(a[i])
+    }
+  }
+  return a
+}
