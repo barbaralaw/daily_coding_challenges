@@ -22,3 +22,14 @@ function inAscOrder(arr) {
 function distinct(a) {
   return [... new Set(a)]
 }
+
+// 7 kyu - "Very Even" Numbers.
+function isVeryEvenNumber(n) {
+  if (n < 10 && n % 2 === 0) {
+    return true;
+  }
+  if (n >= 10) {
+    return isVeryEvenNumber(String(n).split('').reduce((a,c)=>a+Number(c),0))
+  }
+  return false
+}
