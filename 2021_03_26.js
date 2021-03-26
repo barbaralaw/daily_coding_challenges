@@ -33,3 +33,33 @@ function isVeryEvenNumber(n) {
   }
   return false
 }
+
+// 6 kyu - +1 Array
+function upArray(arr){
+  let digs = [0,1,2,3,4,5,6,7,8,9]
+  if (arr.length != arr.filter(x=>digs.includes(x)).length || arr.length == 0) {
+    return null
+  } else if (arr.length > 15) {
+    let smArr = arr.slice(-5);
+    let str = smArr.join('')
+    let num = Number(str)+1
+    let newArr = String(num).split('')
+    let numArr = []
+    for (let i=0; i<arr.length-5; i++) {
+      numArr.push(arr[i])
+    }
+    for (let i=0; i<newArr.length; i++) {
+      numArr.push(Number(newArr[i]))
+    }
+    return numArr
+  } else {
+    let str = arr.join('')
+    let num = Number(str)+1
+    let newArr = String(num).split('')
+    let numArr = []
+    for (let i=0; i<newArr.length; i++) {
+      numArr.push(Number(newArr[i]))
+    }
+    return numArr
+  }
+}
