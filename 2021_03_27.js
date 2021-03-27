@@ -20,3 +20,29 @@ function finance(n) {
   }
   return total
 }
+
+// 8 kyu - Logical calculator
+function logicalCalc(array, op){
+  let bool = array[0]
+  let i = 0
+  while (i < array.length - 1) {
+    switch (op) {
+      case 'AND':
+        bool = bool && array[i+1]
+        break;
+      case 'OR':
+        if (array.includes(true)){
+          return true
+        }
+        return false
+        break;
+      case 'XOR':
+        if ((bool && !array[i+1]) || (array[i+1] && !bool)) {
+          bool = true;
+        } else {
+          bool = false;
+        }
+    }
+    i++;
+  }
+  return bool
