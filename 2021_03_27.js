@@ -46,3 +46,21 @@ function logicalCalc(array, op){
     i++;
   }
   return bool
+
+// 8 kyu - get character from ASCII value
+function getChar(c){
+  return String.fromCharCode(c)
+}
+
+// 7 kyu - Reverse a Number
+function reverseNumber(n) {
+  let str = String(n)
+  if (n < 0) {
+    str = String(n).slice(1)
+  }
+  let rev = Number(str.split('').reverse().join(''))
+  if (n < 0) {
+    rev *= -1
+  }
+  return rev
+}
