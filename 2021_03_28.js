@@ -55,3 +55,69 @@ var countBits = function(n) {
   }
   return count
 };
+
+// 8 kyu - Template Strings
+var TempleStrings = function(obj, feature) {
+  return `${obj} are ${feature}`
+}
+
+// 8 kyu - Multiple of Index
+function multipleOfIndex(array) {
+  return array.filter((x,i) => x%i == 0)
+}
+
+// 8 kyu - Bin to Decimal
+function binToDec(bin){
+  return parseInt(bin, 2)
+}
+
+// 8 kyu - How many stairs will Suzuki climb in 20 years?
+function stairsIn20(s){
+  let y = []
+  for (let i=0; i<s.length; i++) {
+    y.push(s[i].reduce((a,c)=>a+c))
+  }
+  return 20*y.reduce((a,c)=>a+c)
+}
+
+// 8 kyu - Return the Day
+function whatday(num) {
+  switch(num) {
+    case 1:
+      return "Sunday";
+    case 2:
+      return "Monday";
+    case 3:
+      return "Tuesday";
+    case 4:
+      return "Wednesday";
+    case 5:
+      return "Thursday";
+    case 6:
+      return "Friday";
+    case 7:
+      return "Saturday";
+    default:
+      return 'Wrong, please enter a number between 1 and 7';
+  }
+}
+
+// 8 kyu - Is the date today
+function isToday(date) {
+  let today = new Date()
+  return (date.getDate() === today.getDate() && date.getMonth() === today.getMonth() && date.getFullYear() === today.getFullYear())
+}
+
+// 8 kyu - Sum of Multiples
+function sumMul(n,m){
+  if (n > 0 && m > 0) {
+    let sum = 0
+    let mult = n
+    while (mult < m) {
+      sum += mult
+      mult += n
+    }
+    return sum
+  }
+  return 'INVALID'
+}
