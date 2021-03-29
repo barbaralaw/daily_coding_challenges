@@ -42,3 +42,16 @@ function openOrSenior(data){
   }
   return cats
 }
+
+// 6 kyu - Bit Counting
+var countBits = function(n) {
+  let count = 0
+  let bin = n.toString(2)
+  let strArr = bin.toString(10).split('')
+  for (let i=0; i<strArr.length; i++) {
+    if (strArr[i] == 1) {
+      count++
+    }
+  }
+  return count
+};
