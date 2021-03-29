@@ -94,3 +94,88 @@ function trueOrFalse(val){
     return 'true';
   }
 }
+
+// 8 kyu - Training JS #9: loop statement--while and do..while
+function padIt(str,n){
+  let it = 1
+  while (n>0) {
+    if (it%2!=0) {
+      str = '*'+str
+    } else {
+      str += '*'
+    }
+    it++
+    n--
+  }
+  return str
+}
+
+// 8 kyu - Training JS #11: loop statement--break,continue
+function grabDoll(dolls){
+  var bag=[];
+  for (let i=0; i<dolls.length; i++) {
+    if (bag.length >= 3) {
+      break;
+    }
+    if (dolls[i] === "Hello Kitty" || dolls[i] === 'Barbie doll') {
+      bag.push(dolls[i])
+    } else {
+      continue;
+    }
+  }
+
+  return bag;
+}
+
+// 8 kyu - Training JS #13: Number object and its properties
+function whatNumberIsIt(n){
+  if (isNaN(n)) {
+    console.log('here')
+    return 'Input number is Number.NaN'
+  }
+  switch (n) {
+      case Number.MAX_VALUE:
+        return 'Input number is Number.MAX_VALUE'
+        break;
+      case Number.POSITIVE_INFINITY:
+        return 'Input number is Number.POSITIVE_INFINITY'
+        break;
+      case Number.MIN_VALUE:
+        return 'Input number is Number.MIN_VALUE'
+        break;
+      case Number.NEGATIVE_INFINITY:
+        return 'Input number is Number.NEGATIVE_INFINITY'
+        break;
+      case Number.NaN:
+        return 'Input number is Number.NaN'
+        break;
+      default:
+        return `Input number is ${n}`
+  }
+}
+
+// 8 kyu - Determine offspring sex based on genes XX ans XY chromosomes
+function chromosomeCheck(sperm) {
+  return sperm.includes('Y') ? `Congratulations! You're going to have a son.`:`Congratulations! You're going to have a daughter.`
+}
+
+// 8 kyu - Leonardo Dicaprio and Oscars
+function leo(oscar){
+  if (oscar === 88) {
+    return 'Leo finally won the oscar! Leo is happy'
+  } else if (oscar === 86) {
+    return 'Not even for Wolf of wallstreet?!'
+  } else if (oscar < 88) {
+    return 'When will you give Leo an Oscar?'
+  }
+  return 'Leo got one already!'
+}
+
+// 8 kyu - Remove First and Last Character Part Two
+function array(arr){
+  if (arr.split(',').length <= 2) {
+    return null
+  }
+  let spl = arr.split(',')
+  return spl.slice(1,spl.length-1).join(' ')
+}
