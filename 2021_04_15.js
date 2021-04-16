@@ -23,3 +23,11 @@ function meeting(x){
 function appendArrays (arr1, arr2) {
   return arr1.concat(arr2)
 }
+
+// 7 kyu - Even times last
+function evenLast(numbers) {
+  if (numbers.length === 0) {
+    return 0
+  }
+  return (numbers.map((x,i) => i%2 === 0 ? x : 0).reduce((a,c)=>a+c))*numbers[numbers.length-1]
+}
