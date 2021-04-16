@@ -13,3 +13,8 @@ function boredom(staff){
 function broken(x){
   return x.split('').map(x=>x==1?'0':'1').join('')
 }
+
+// 7 kyu - The Office IV - Find a Meeting Room
+function meeting(x){
+  return x.indexOf('O') >= 0 ? x.indexOf('O') : 'None available!'
+}
