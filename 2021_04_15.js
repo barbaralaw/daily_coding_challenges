@@ -31,3 +31,10 @@ function evenLast(numbers) {
   }
   return (numbers.map((x,i) => i%2 === 0 ? x : 0).reduce((a,c)=>a+c))*numbers[numbers.length-1]
 }
+
+// 7 kyu - The Office VI - Sabbatical
+function sabb(s, val, happiness){
+  let sab = 'sabbatical'
+  let sabVal = s.split('').map(x=>sab.includes(x.toLowerCase())?1:0).reduce((a,c)=>a+c)
+  return val+happiness+sabVal > 22 ? 'Sabbatical! Boom!' : 'Back to your desk, boy.'
+}
