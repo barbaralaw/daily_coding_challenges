@@ -18,3 +18,8 @@ function broken(x){
 function meeting(x){
   return x.indexOf('O') >= 0 ? x.indexOf('O') : 'None available!'
 }
+
+// 7 kyu - Array Appender
+function appendArrays (arr1, arr2) {
+  return arr1.concat(arr2)
+}
