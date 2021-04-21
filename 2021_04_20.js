@@ -38,3 +38,12 @@ function changeMe(moneyIn){
         return 'Not a specified coin or note'
   }
 }
+
+// 7 kyu - All Star Code Challenge #24
+function hypotenuse(a, b){
+  return Math.sqrt(a**2 + b**2)
+}
+
+function leg(c, a){
+  return Math.sqrt(c**2 - a**2)
+}
