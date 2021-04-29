@@ -13,3 +13,20 @@ function piecesValue(arr, s) {
   }
   return total
 }
+
+// 6 kyu - Sum of Digits / Digital Root
+function digital_root(n) {
+  if (n < 10) {
+    return n
+  }
+
+  let newStr = String(n).split('')
+  const newN = newStr => {
+    let tot = 0
+    for (let i=0; i<newStr.length; i++) {
+      tot += Number(newStr[i])
+    }
+    return tot
+  }
+  return digital_root(newN(newStr))
+}
