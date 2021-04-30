@@ -34,3 +34,52 @@ function double(arr) {
 function average(scores) {
   return Math.round(scores.reduce((a,c)=>a+c,0)/scores.length)
 }
+
+// 7 kyu - Factorial
+function factorial(n){
+  let total = 1
+  while (n > 0) {
+    total *= n
+    n--
+  }
+  return total
+}
+
+// 7 kyu - Spraying trees
+function task(w, n, c) {
+  let worker = ''
+  switch (w) {
+    case 'Monday':
+      worker = 'James'
+      break;
+    case 'Tuesday':
+      worker = 'John'
+      break;
+    case 'Wednesday':
+      worker = 'Robert'
+      break;
+    case 'Thursday':
+      worker = 'Michael'
+      break;
+    case 'Friday':
+      worker = 'William'
+      break;
+    default:
+      break;
+  }
+  return `It is ${w} today, ${worker}, you have to work, you must spray ${n} trees and you need ${n*c} dollars to buy liquid`
+}
+
+// 7 kyu - Folding your way to the moon
+function foldTo(distance) {
+  if (distance >= 0) {
+    let p = 0.0001
+    let count = 0
+    while (p < distance) {
+      p *= 2
+      count++
+    }
+    return count
+  }
+  return null
+}
