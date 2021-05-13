@@ -63,3 +63,8 @@ var FilterString = function(value) {
 function sumEvenNumbers(input) {
   return input.filter(x=>x%2===0).reduce((a,c)=>a+c)
 }
+
+// 8 kyu - Decibel Scale
+function dBScale(intensity) {
+  return 10*Math.log10(intensity/(Math.pow(10,-12)));
+}
