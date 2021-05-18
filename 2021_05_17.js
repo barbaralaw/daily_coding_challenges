@@ -11,3 +11,8 @@ function solve(s){
   })
   return upCount > loCount ? s.split('').map(x=>x.toUpperCase()).join('') : s.split('').map(x=>x.toLowerCase()).join('')
 }
+
+// 7 kyu - The Coupon Code
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+  return enteredCode === correctCode && Date.parse(currentDate) <= Date.parse(expirationDate) ? true : false
+}
