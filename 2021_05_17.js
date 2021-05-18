@@ -16,3 +16,12 @@ function solve(s){
 function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
   return enteredCode === correctCode && Date.parse(currentDate) <= Date.parse(expirationDate) ? true : false
 }
+
+// 7 kyu - Greatest common divisor
+function mygcd(x,y){
+  let i = 1
+  while (Math.max(x,y)%(Math.min(x,y)/i) != 0) {
+    i++
+  }
+  return Math.min(x,y)/i
+}
