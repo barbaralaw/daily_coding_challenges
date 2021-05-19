@@ -24,3 +24,14 @@ reverse = function(array) {
   }
   return rev
 }
+
+// 7 kyu - Indexed capitalization
+function capitalize(s,arr){
+  let sArr = s.split('')
+  for (let i=0; i<arr.length; i++) {
+    if (arr[i] < sArr.length) {
+      sArr[arr[i]] = sArr[arr[i]].toUpperCase()
+    }
+  }
+  return sArr.join('')
+};
