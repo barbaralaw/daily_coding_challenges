@@ -25,3 +25,10 @@ function mygcd(x,y){
   }
   return Math.min(x,y)/i
 }
+
+// 7 kyu - Functional Addition
+function add(n) {
+  return function (m) {
+   return m + n
+  }
+}
