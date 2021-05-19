@@ -15,3 +15,12 @@ function menFromBoys(arr){
   odds.sort((a,b)=>b-a)
   return evens.concat(odds)
 }
+
+// 7 kyu - esreveR
+reverse = function(array) {
+  let rev = []
+  for (let i=0; i<array.length; i++) {
+    rev.unshift(array[i])
+  }
+  return rev
+}
