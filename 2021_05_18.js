@@ -35,3 +35,8 @@ function capitalize(s,arr){
   }
   return sArr.join('')
 };
+
+// 7 kyu - Find min and max
+function getMinMax(arr){
+  return [Math.min(...arr), Math.max(...arr)]
+};
