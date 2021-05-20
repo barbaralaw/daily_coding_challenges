@@ -47,3 +47,16 @@ function getMax2() {
 var Ghost = function() {
   this.color = ['white','yellow','purple','red'][Math.floor(Math.random()*4)]
 };
+
+// 8 kyu - Hello Happy Codevarrior!
+function Warrior(n){
+  let name = n;
+  this.name = function(n){
+    if( n ) name=n;
+    return name;
+  }
+}
+
+Warrior.prototype.toString = function(){
+    return "Hi! my name's "+this.name();
+}
