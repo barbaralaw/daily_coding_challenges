@@ -15,3 +15,30 @@ var greet_ben = function() {
   name = 'Ben'
   return "Hello, " + name + '!';
 };
+
+// 8 kyu - Broken Counter
+function Counter() {
+  this.value = 0;
+}
+
+Counter.prototype.increase = function() {
+  this.value++;
+};
+
+Counter.prototype.getValue = function() {
+  return this.value;
+};
+
+Counter.prototype.reset= function () {
+  this.value = 0;
+};
+
+// 8 kyu - Max Headroom and JavaScript style
+function getMax1() {
+  var max = {name: 'Max Headroom'}
+  return max;
+}
+
+function getMax2() {
+  return { name: 'Max Headroom'}
+}
