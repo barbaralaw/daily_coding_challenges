@@ -42,3 +42,8 @@ function getMax1() {
 function getMax2() {
   return { name: 'Max Headroom'}
 }
+
+// 8 kyu - Color Ghost
+var Ghost = function() {
+  this.color = ['white','yellow','purple','red'][Math.floor(Math.random()*4)]
+};
