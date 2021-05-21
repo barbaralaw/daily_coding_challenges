@@ -3,3 +3,8 @@ function fiveLine(s){
   s = s.trim()
   return `${s}\n${s.repeat(2)}\n${s.repeat(3)}\n${s.repeat(4)}\n${s.repeat(5)}`
 }
+
+// 8 kyu - Training JS #29: methods of arrayObject---concat() and join()
+function bigToSmall(arr){
+  return [].concat(...arr).sort((a,b)=>b-a).join('>')
+}
