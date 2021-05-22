@@ -12,3 +12,8 @@ function match(candidate, job) {
   }
   return (.9*candidate.minSalary) <= job.maxSalary ? true : false
 }
+
+// 8 kyu - Are there any arrows left?
+function anyArrows(arrows){
+  return arrows.some(x => !x.damaged == true);
+}
