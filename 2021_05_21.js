@@ -12,3 +12,25 @@ function startingMark(bodyHeight){
 function barTriang(p1, p2, p3){
   return [Number(((p1[0]+p2[0]+p3[0])/3).toFixed(4)), Number(((p1[1]+p2[1]+p3[1])/3).toFixed(4))]
 }
+
+// 8 kyu - Heads and Legs
+function animals(heads, legs){
+  let chickens = (legs-2*heads)/2
+  return heads-chickens >= 0 && chickens >= 0 && chickens%1 == 0 ? [heads-chickens, chickens] : 'No solutions'
+}
+
+// 8 kyu - Improving Math.round(x)
+Math.roundTo = function (number, precision) {
+  return Number(number.toFixed(precision))
+}
+
+// 8 kyu - Wilson primes
+function amIWilson(p) {
+  let fact = p-1
+  let num = p-2
+  while (num > 0) {
+    fact *= num
+    num--
+  }
+  return ( (fact + 1) / (p ** 2) ) % 1 ? false : true
+}
