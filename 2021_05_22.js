@@ -35,3 +35,9 @@ function cakes(recipe, available) {
   }
   return maxCakes
 }
+
+// 6 kyu - Is Integer Array?
+function isIntArray(arr) {
+  console.log(arr, Number.isNaN(arr))
+  return typeof arr != 'object' || arr == null ? false : arr.every(x => x%1 === 0) && arr.every(x => typeof x === 'number') ? true : false
+}
