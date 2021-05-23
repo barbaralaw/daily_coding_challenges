@@ -17,3 +17,21 @@ function match(candidate, job) {
 function anyArrows(arrows){
   return arrows.some(x => !x.damaged == true);
 }
+
+// 5 kyu - Pete, the baker
+function cakes(recipe, available) {
+  let maxes = {}
+  for (let ing in recipe) {
+    if (!available[ing]) {
+      return 0
+    }
+    maxes[ing] = Math.floor(available[ing]/recipe[ing])
+  }
+  let maxCakes = 10000;
+  for (let quant in maxes) {
+    if (maxes[quant] < maxCakes) {
+      maxCakes = maxes[quant]
+    }
+  }
+  return maxCakes
+}
