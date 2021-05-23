@@ -41,3 +41,13 @@ function isIntArray(arr) {
   console.log(arr, Number.isNaN(arr))
   return typeof arr != 'object' || arr == null ? false : arr.every(x => x%1 === 0) && arr.every(x => typeof x === 'number') ? true : false
 }
+
+// 7 kyu - Debug Sum of Digits of a Number
+function getSumOfDigits(integer) {
+  var sum = null;
+  var digits =  integer.toString();
+  for(var ix = 0; ix < digits.length; ix++) {
+    sum += +digits[ix];
+  }
+  return sum;
+}
