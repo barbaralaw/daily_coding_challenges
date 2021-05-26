@@ -163,3 +163,49 @@ function toFreud(string) {
   }
   return string.split(' ').map(x => 'sex').join(' ')
 }
+
+// 5 kyu - Greed is Good
+function score( dice ) {
+  let totScore = 0
+  let toScore = {}
+  for (let roll in dice) {
+    if (!toScore[dice[roll]]) {
+      toScore[dice[roll]] =1
+    } else {
+      toScore[dice[roll]] += 1
+    }
+  }
+  if (toScore[1] >= 3) {
+    totScore += 1000
+    toScore[1] -= 3
+  }
+  if (toScore[6] >= 3) {
+    totScore += 600
+    toScore[6] -= 3
+  }
+  if (toScore[5] >= 3) {
+    totScore += 500
+    toScore[5] -= 3
+  }
+  if (toScore[4] >= 3) {
+    totScore += 400
+    toScore[4] -= 3
+  }
+  if (toScore[3] >= 3) {
+    totScore += 300
+    toScore[3] -= 3
+  }
+  if (toScore[2] >= 3) {
+    totScore += 200
+    toScore[2] -= 3
+  }
+  if (toScore[1] >= 1) {
+    totScore += 100 * toScore[1]
+    toScore[1] = 0
+  }
+  if (toScore[5] >= 1) {
+    totScore += 50 * toScore[5]
+    toScore[5] = 0
+  }
+  return totScore
+}
