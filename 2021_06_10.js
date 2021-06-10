@@ -31,3 +31,14 @@ function largestPairSum(numbers){
   numbers.sort((a,b)=>b-a)
   return numbers[0]+numbers[1]
 }
+
+// 7 kyu - String reverse slicing 101
+function reverseSlice(str) {
+  let rev = str.split('').reverse().join('')
+  let list = []
+  while (rev.length > 0) {
+    list.push(rev)
+    rev = rev.slice(1)
+  }
+  return list
+}
