@@ -25,3 +25,9 @@ var buy = function(x, arr){
 
   return null;
 };
+
+// 7 kyu - Largest pair sum in Array
+function largestPairSum(numbers){
+  numbers.sort((a,b)=>b-a)
+  return numbers[0]+numbers[1]
+}
