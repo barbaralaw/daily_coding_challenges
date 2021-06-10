@@ -8,3 +8,20 @@ function solution(value){
 function hexToDec(hexString){
   return parseInt(hexString, 16)
 }
+
+// 7 kyu - A Gift Well Spent
+var buy = function(x, arr){
+  // PREP - Parameters, Returns, Examples, Pseudocode
+
+  // go through arr item by item
+  for (let i=0; i<arr.length; i++) {
+    // check if x - arr[i] is in array
+    if (arr.slice(i+1).includes(x-arr[i])) {
+      let newIdx = arr.slice(i+1).indexOf(x-arr[i])
+      // if so, return array of those indeces
+      return [i, newIdx+i+1]
+    }
+  }
+
+  return null;
+};
