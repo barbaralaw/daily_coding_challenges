@@ -42,3 +42,8 @@ function reverseSlice(str) {
   }
   return list
 }
+
+// 7 kyu - Flatten
+var flatten = function (array){
+  return [].concat(...array)
+}
