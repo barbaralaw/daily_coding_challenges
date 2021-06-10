@@ -47,3 +47,18 @@ function reverseSlice(str) {
 var flatten = function (array){
   return [].concat(...array)
 }
+
+// 7 kyu - Move all Vowels
+function moveVowel(input) {
+  let str = ''
+  let vowStr = ''
+  let vowels = ['a','e','i','o','u']
+  for (let i=0; i<input.length; i++) {
+    if (vowels.includes(input[i])) {
+      vowStr += input[i]
+    } else {
+      str += input[i]
+    }
+  }
+  return str + vowStr
+}
