@@ -62,3 +62,19 @@ function moveVowel(input) {
   }
   return str + vowStr
 }
+
+// 7 kyu - Maximum Triplet Sum (Array Series #7)
+function maxTriSum(numbers){
+  numbers.sort((a,b)=>b-a)
+  let maxSum = numbers[0]
+  let added = 1
+  let i=1
+  while (added < 3) {
+    if (numbers[i] != numbers[i-1]) {
+      maxSum += numbers[i]
+      added++
+    }
+    i++
+  }
+  return maxSum
+}
