@@ -26,3 +26,13 @@ function getFirstPython(list) {
   }
   return 'There will be no Python developers'
 }
+
+// 7 kyu - Coding Meetup #3 - Higher-Order Functions Series - Is Ruby coming?
+function isRubyComing(list) {
+  for (let person of list) {
+    if (person.language == 'Ruby') {
+      return true
+    }
+  }
+  return false
+}
