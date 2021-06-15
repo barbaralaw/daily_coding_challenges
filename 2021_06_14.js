@@ -16,3 +16,13 @@ function countLanguages(list) {
   }
   return langs
 }
+
+// 7 kyu - Coding Meetup #4 - Higher-Order Functions Series - Find the first Python developer
+function getFirstPython(list) {
+  for (let person of list) {
+    if (person.language == 'Python') {
+      return `${person.firstName}, ${person.country}`
+    }
+  }
+  return 'There will be no Python developers'
+}
