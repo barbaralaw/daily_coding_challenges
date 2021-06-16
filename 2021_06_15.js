@@ -32,3 +32,8 @@ function isAgeDiverse(list) {
     list.some(p => p.age >= 100)
   ) ? true : false
 }
+
+// 6 kyu - Coding Meetup #8 - Higher-Order Functions Series - Will all continents be represented?
+function allContinents(list) {
+  return list.some(p => p.continent == 'Africa') && list.some(p => p.continent == 'Americas') && list.some(p => p.continent == 'Asia') &&list.some(p => p.continent == 'Europe') &&list.some(p => p.continent == 'Oceania') ? true : false
+}
