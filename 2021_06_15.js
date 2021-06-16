@@ -36,4 +36,18 @@ function isAgeDiverse(list) {
 // 6 kyu - Coding Meetup #8 - Higher-Order Functions Series - Will all continents be represented?
 function allContinents(list) {
   return list.some(p => p.continent == 'Africa') && list.some(p => p.continent == 'Americas') && list.some(p => p.continent == 'Asia') &&list.some(p => p.continent == 'Europe') &&list.some(p => p.continent == 'Oceania') ? true : false
+
+// 6 kyu - Coding Meetup #7 - Higher-Order Functions Series - Find the most senior developer
+function findSenior(list) {
+  let elders = [list[0]]
+  if (list.length > 0) {
+    for (let i=1; i<list.length; i++) {
+      if (list[i].age > elders[0].age) {
+        elders = [list[i]]
+      } else if (list[i].age == elders[0].age) {
+        elders.push(list[i])
+      }
+    }
+  }
+  return elders
 }
