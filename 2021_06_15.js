@@ -16,3 +16,19 @@ function addUsername(list) {
   }
   return list
 }
+
+// 6 kyu - Coding Meetup #9 - Higher-Order Functions Series - Is the meetup age-diverse?
+function isAgeDiverse(list) {
+  return (
+    list.some(p => p.age >= 10 && p.age < 20) &&
+    list.some(p => p.age >= 20 && p.age < 30) &&
+    list.some(p => p.age >= 30 && p.age < 40) &&
+    list.some(p => p.age >= 40 && p.age < 50) &&
+    list.some(p => p.age >= 50 && p.age < 60) &&
+    list.some(p => p.age >= 60 && p.age < 70) &&
+    list.some(p => p.age >= 70 && p.age < 80) &&
+    list.some(p => p.age >= 80 && p.age < 90) &&
+    list.some(p => p.age >= 90 && p.age < 100) &&
+    list.some(p => p.age >= 100)
+  ) ? true : false
+}
