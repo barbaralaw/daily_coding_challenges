@@ -10,3 +10,17 @@ function wordToBin(str){
   }
   return array;
 }
+
+// 6 kyu - Coding Meetup #16 - Higher-Order Functions Series - Ask for missing details
+function askForMissingDetails(list) {
+  let slackers = []
+  for (let person of list) {
+    for (let prop in person) {
+      if (person[prop] == null) {
+        person.question = `Hi, could you please provide your ${prop}.`
+        slackers.push(person)
+      }
+    }
+  }
+  return slackers
+}
