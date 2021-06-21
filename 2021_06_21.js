@@ -28,3 +28,14 @@ var lengthOfSequence = function (arr, n) {
   }
   return Math.abs(shorter[1]-shorter[0])+1
 };
+
+// 7 kyu - Squares sequence
+function squares(x, n) {
+  let nums = []
+  while (n > 0) {
+    nums.push(x)
+    x *= x
+    n--
+  }
+  return nums
+}
