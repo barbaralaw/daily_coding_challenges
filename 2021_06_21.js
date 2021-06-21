@@ -73,3 +73,12 @@ function count(array){
 function notVisibleCubes(n) {
   return n > 2 ? (n-2)**3 : 0
 }
+
+// 7 kyu - Alphabetical Addition
+function addLetters(...letters) {
+  let tot = 0
+  for (let i=0; i<letters.length; i++) {
+    tot += letters[i].charCodeAt(0) - 96
+  }
+  return String.fromCharCode((tot%26)+96) == '`' ? 'z' : String.fromCharCode((tot%26)+96)
+}
