@@ -94,3 +94,13 @@ function manipulate(num) {
   str = str.slice(0, str.length/2) + '0'.repeat(Math.ceil(str.length/2))
   return Number(str);
 }
+
+// 7 kyu - Build a Square
+function generateShape(integer){
+  let square = ''
+  for (let i=1; i<integer; i++) {
+    square += '+'.repeat(integer) + '\n'
+  }
+  square += '+'.repeat(integer)
+  return square
+}
