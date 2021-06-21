@@ -12,3 +12,19 @@ function infected(s) {
   let inf = tot.split('').filter(x => x==='1')
   return (inf.length / tot.length)*100 || 0
 }
+
+// 7 kyu - Finding length of a sequence
+var lengthOfSequence = function (arr, n) {
+  let nIdxs = arr.map((x,i) => {
+    if (x === n) {
+      return i
+    } else {
+      return ''
+    }
+  })
+  let shorter = nIdxs.filter(x => x !== '')
+  if (shorter.length != 2) {
+    return 0
+  }
+  return Math.abs(shorter[1]-shorter[0])+1
+};
