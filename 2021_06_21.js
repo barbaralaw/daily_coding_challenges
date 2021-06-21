@@ -87,3 +87,10 @@ function addLetters(...letters) {
 var sortArray = function(value) {
   return value.split('').sort((c, p) => c - p ).join('');
 }
+
+// 7 kyu - Number Manipulation I (Easy)
+function manipulate(num) {
+  let str = String(num)
+  str = str.slice(0, str.length/2) + '0'.repeat(Math.ceil(str.length/2))
+  return Number(str);
+}
