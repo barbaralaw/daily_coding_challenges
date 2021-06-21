@@ -104,3 +104,30 @@ function generateShape(integer){
   square += '+'.repeat(integer)
   return square
 }
+
+// 7 kyu - Reverse list
+function reverseList(arr) {
+  return arr.reverse();
+}
+
+// 7 kyu - Are they square?
+var isSquare = function(arr){
+  return arr.length > 0 ? arr.every(x => (x**.5)%1 == 0) : undefined
+}
+
+// 7 kyu - How many animals are there?
+function countAnimals(sentence) {
+  return sentence.split(' ').filter(x => x.match(/[0-9]/g)).reduce((a,c)=>a+Number(c), 0)
+}
+
+// 7 kyu - Alternate Summed Square
+function alternateSqSum(arr){
+  let squared = arr.map((x,i)=> {
+    if (i % 2) {
+      return x**2
+    } else {
+      return x
+    }
+  })
+  return arr.length ? squared.reduce((a,c)=>a+c) : 0
+}
