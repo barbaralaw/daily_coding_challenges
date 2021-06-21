@@ -82,3 +82,8 @@ function addLetters(...letters) {
   }
   return String.fromCharCode((tot%26)+96) == '`' ? 'z' : String.fromCharCode((tot%26)+96)
 }
+
+// 7 kyu - Failed Sort - Bug Fixing #4
+var sortArray = function(value) {
+  return value.split('').sort((c, p) => c - p ).join('');
+}
