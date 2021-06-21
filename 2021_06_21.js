@@ -131,3 +131,29 @@ function alternateSqSum(arr){
   })
   return arr.length ? squared.reduce((a,c)=>a+c) : 0
 }
+
+// 7 kyu - Sum and Multiply
+var sumAndMultiply = function(sum, multiply) {
+  let num1 = sum
+  while (num1 >= 0) {
+    let num2 = sum - num1
+    if (multiply / num1 == num2) {
+      return [num2, num1]
+    }
+    num1--
+  }
+  return null
+}
+
+// 7 kyu - Simple Fun #195: Guess Hat Color
+function guessHatColor(a,b,c,d) {
+  if (b == c) {
+    return 1
+  }
+  return 2
+}
+
+// 7 kyu - Odd-Even String Sort
+function sortMyString(S) {
+    return S.split('').filter((x,i)=> i%2 == 0).join('') + ' ' + S.split('').filter((x,i)=> i%2).join('')
+}
