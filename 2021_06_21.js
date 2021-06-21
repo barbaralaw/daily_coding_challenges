@@ -54,3 +54,17 @@ function solve(a,b){
   }
   return counts
 }
+
+// 7 kyu - Counting Array Elements
+function count(array){
+  const seen = {}
+  let count = 0
+  for (let i=0; i<array.length; i++) {
+    if (seen[array[i]]) {
+      seen[array[i]]++
+    } else {
+      seen[array[i]] = 1
+    }
+  }
+  return seen
+}
