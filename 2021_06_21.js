@@ -39,3 +39,18 @@ function squares(x, n) {
   }
   return nums
 }
+
+// 7 kyu - String matchup
+function solve(a,b){
+  let counts = []
+  counts.length = b.length
+  counts.fill(0)
+  for (let i=0; i<b.length; i++) {
+    for (let index in a) {
+      if (a[index] === b[i]) {
+        counts[i]++
+      }
+    }
+  }
+  return counts
+}
