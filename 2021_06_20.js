@@ -24,3 +24,16 @@ function askForMissingDetails(list) {
   }
   return slackers
 }
+
+// 7 kyu - Coding Meetup #14 - Higher-Order Functions Series - Order the food
+function orderFood(list) {
+  let foodOrder = {}
+  for (let person of list) {
+    if (foodOrder[person.meal]) {
+      foodOrder[person.meal]++
+    } else {
+      foodOrder[person.meal] = 1
+    }
+  }
+  return foodOrder
+}
