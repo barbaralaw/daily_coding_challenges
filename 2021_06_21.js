@@ -157,3 +157,22 @@ function guessHatColor(a,b,c,d) {
 function sortMyString(S) {
     return S.split('').filter((x,i)=> i%2 == 0).join('') + ' ' + S.split('').filter((x,i)=> i%2).join('')
 }
+
+// 7 kyu - Counting in the Amazon
+function countArara(n) {
+  if (n%2) {
+    return 'adak '.repeat(Math.floor(n/2)) + 'anane'
+  } else {
+    return 'adak '.repeat(Math.floor(n/2)).trim()
+  }
+}
+
+// 7 kyu - Find twins
+function elimination(arr){
+  for (let i=0; i<arr.length-1; i++) {
+    if (arr.slice(i+1).includes(arr[i])) {
+      return arr[i]
+    }
+  }
+  return null
+}
