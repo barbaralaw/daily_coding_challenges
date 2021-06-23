@@ -62,3 +62,44 @@ function calculateTotal(team1, team2) {
 function squareRoot(x) {
   return Number((x**.5).toFixed(5))
 }
+
+// 7 kyu - Guess the Sequence
+function sequence(x) {
+  let nums = []
+  for (let i=1; i<= x; i++) {
+    nums.push(i)
+  }
+  return nums.sort()
+}
+
+// 7 kyu - Sort the Vowels!
+function sortVowels(s){
+  let ret = ''
+  if (s) {
+    const vowels = ['a','e','i','o','u']
+    for (let i=0; i<s.length; i++) {
+      if (vowels.includes(s[i].toLowerCase())) {
+        ret += '|' + s[i]
+      } else {
+        ret += s[i] + '|'
+      }
+      if (i < s.length-1) {
+        ret += '\n'
+      }
+    }
+  }
+  return ret
+}
+
+// 7 kyu - sPoNgEbOb MeMe
+function spongeMeme(sentence) {
+  let bob = ''
+  for (let i=0; i<sentence.length; i++) {
+    if (i % 2) {
+      bob += sentence[i].toLowerCase()
+    } else {
+      bob += sentence[i].toUpperCase()
+    }
+  }
+  return bob
+}
