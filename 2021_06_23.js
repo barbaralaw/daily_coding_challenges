@@ -24,3 +24,19 @@ function firstNonRepeatingLetter(s) {
   }
   return ''
 }
+
+// 7 kyu - Mythical Heads and Tails
+function beasts(heads, tails){
+  // 2o + 5h = heads
+  // o + h = tails
+  // 2o + 2h = 2tails
+  // 2o + 5h - 2o - 2h = heads - 2tails
+  // 3h = heads - 2tails
+  // h = (heads - 2tails)/3
+  let hydra = ((heads - 2*tails)/3)
+  let orthus = (tails - ((heads - 2*tails)/3))
+  if (hydra%1 == 0 && orthus%1 == 0 && hydra>=0 && orthus>=0) {
+    return [(tails - ((heads - 2*tails)/3)), ((heads - 2*tails)/3)]
+  }
+  return 'No solutions'
+}
