@@ -103,3 +103,17 @@ function spongeMeme(sentence) {
   }
   return bob
 }
+
+// 6 kyu - Split Strings
+function solution(str){
+  let split = []
+  if (str.length) {
+    for (let i=0; i<str.length; i+=2) {
+      split.push(str.substring(i,i+2))
+    }
+    if (split[split.length-1].length === 1) {
+      split[split.length-1] = split[split.length-1]+'_'
+    }
+  }
+  return split
+}
