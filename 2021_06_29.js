@@ -25,3 +25,21 @@ function evaporator(content, evap_per_day, threshold){
   }
   return days
 }
+
+// 7 kyu - WeIrD StRiNg CaSe
+function toWeirdCase(string){
+  let arr = string.split(' ')
+  let weird = []
+  for (let i=0; i<arr.length; i++) {
+    let weirdWord = ''
+    for (let j=0; j<arr[i].length; j++) {
+      if (j%2) {
+        weirdWord += arr[i][j].toLowerCase()
+      } else {
+        weirdWord += arr[i][j].toUpperCase()
+      }
+    }
+    weird.push(weirdWord)
+  }
+  return weird.join(' ')
+}
