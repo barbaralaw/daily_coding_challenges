@@ -43,3 +43,29 @@ function toWeirdCase(string){
   }
   return weird.join(' ')
 }
+
+// 7 kyu - Who let the dogs out?
+var BARK  = 'woof woof';
+var SLEEP = 'zzzzzzzzz....';
+
+function dog_bark_by_default(bark=true){
+  return bark ? BARK : SLEEP;
+}
+
+function dog_bark_only_if_told_so(bark=false){
+  return bark ? BARK : SLEEP;
+}
+
+function dog_dont_bark_by_default(dont_bark=true){
+  return !dont_bark ? BARK : SLEEP;
+}
+
+function dog_dont_bark_only_if_told_so(dont_bark=false){
+  return !dont_bark ? BARK : SLEEP;
+}
+
+// 7 kyu - Failed Filter - Bug Fixing #3
+var FilterNumbers = function(str) {
+  let digs = ['0','1','2','3','4','5','6','7','8','9']
+  return str.split('').filter(c => !digs.includes(c)).join('');
+}
